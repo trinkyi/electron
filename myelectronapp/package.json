@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "electron": "^30.0.6"
+  },
+  "dependencies": {
+    "ads-client": "^1.14.3"
   }
 }

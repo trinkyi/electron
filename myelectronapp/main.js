@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
+const ads = require('ads-client')
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -28,4 +29,9 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit()
     }
+})
+
+const client = new ads.Client({
+  targetAmsNetId: '192.168.1.120.1.1',
+  targetAdsPort: 851,
 })
