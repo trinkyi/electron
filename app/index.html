@@ -28,7 +28,6 @@
         if (sps) {
             var e = document.getElementById("sps_karte");
             var KlemmenTyp = e.value;
-            for (var i = 0; i < 1; i++) {
             // create a new img element
             var img = document.createElement('img');    
             // set the img source
@@ -37,7 +36,6 @@
             img.id = 'Klemme' + NumberofCards;
             // add the img element to the body of the document
             document.body.appendChild(img);
-            }
         } else {
             alert("Bitte wählen Sie eine SPS-Komponente aus.");
         }
