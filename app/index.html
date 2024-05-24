@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VirtualCX</title>
+</head>
+<body>
+    <h1>VirtualCX</h1>
+
+    <label for="sps">Wählen Sie eine SPS-Komponente:</label>
+    <select id="sps" name="sps">
+        <option value="">--Bitte wählen Sie eine Komponente--</option>
+        <option value="EL1008">EL1008</option>
+        <option value="EL2008">EL2008</option>
+        <option value="EL3008">EL3008</option>
+        <!-- Fügen Sie hier weitere Optionen hinzu -->
+    </select>
+
+    <button onclick="auswahlBestaetigen()">Auswahl bestätigen</button>
+  <img src="..\media\CX\CX9020.png" style="width:400px">
+    <script>
+        function auswahlBestaetigen() {
+            var sps = document.getElementById("sps").value;
+            if (sps) {
+                alert("Sie haben " + sps + " ausgewählt. Jetzt muss die Funktion implementiert werden, um diese Komponente an den integrierten PC anzubringen.");
+            } else {
+                alert("Bitte wählen Sie eine SPS-Komponente aus.");
+            }
+        }
+    </script>
+</body>
+</html>
