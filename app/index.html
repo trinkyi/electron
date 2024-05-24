@@ -6,26 +6,90 @@
 <body>
     <h1>VirtualCX</h1>
 
-    <label for="sps">Wählen Sie eine SPS-Komponente:</label>
-    <select id="sps" name="sps">
+    <label for="sps_karte">Wählen Sie eine SPS-Komponente:</label>
+    <select id="sps_karte" name="sps">
         <option value="">--Bitte wählen Sie eine Komponente--</option>
-        <option value="EL1008">EL1008</option>
-        <option value="EL2008">EL2008</option>
-        <option value="EL3008">EL3008</option>
-        <!-- Fügen Sie hier weitere Optionen hinzu -->
+        <option value="EL1008.png">EL1008</option>
+        <option value="EL2008.png">EL2008</option>
+        <option value="EL3008.png">EL3008</option>
+        <option value="EL4008.png">EL4008</option>
     </select>
 
-    <button onclick="auswahlBestaetigen()">Auswahl bestätigen</button>
-  <img src="..\media\CX\CX9020.png" style="width:400px">
-    <script>
-        function auswahlBestaetigen() {
-            var sps = document.getElementById("sps").value;
-            if (sps) {
-                alert("Sie haben " + sps + " ausgewählt. Jetzt muss die Funktion implementiert werden, um diese Komponente an den integrierten PC anzubringen.");
-            } else {
-                alert("Bitte wählen Sie eine SPS-Komponente aus.");
-            }
-        }
-    </script>
+    <button onclick="addCard()">Auswahl bestätigen</button>
+  <img id="CX" src="..\media\CX\CX9020.png" style="height:400px">
+  <img id="Klemme1" src="" style="height:400px">
 </body>
+<script>
+    var NumberofCards = 0
+    // Define function of button press action
+    function addCard() {
+        NumberofCards++
+        var sps = document.getElementById("sps_karte").value;
+        if (sps) {
+            var e = document.getElementById("sps_karte");
+            var KlemmenTyp = e.value;
+            for (var i = 0; i < 1; i++) {
+            // create a new img element
+            var img = document.createElement('img');    
+            // set the img source
+            img.src = '..\\media\\EL\\' + KlemmenTyp;
+            // set img id
+            img.id = 'Klemme' + NumberofCards;
+            // add the img element to the body of the document
+            document.body.appendChild(img);
+            }
+        } else {
+            alert("Bitte wählen Sie eine SPS-Komponente aus.");
+        }
+    }
+</script>
+<style>
+    #CX {
+        position: fixed;
+        top: 175px;
+        left: 0px;
+        -user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    #Klemme1 {
+        height: 400px;
+        position: fixed;
+        top: 180px;
+        left: 170px;
+        -user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    } 
+    #Klemme2 {
+        height: 400px;
+        position: fixed;
+        top: 180px;
+        left: 212px;
+        -user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }   
+    #Klemme3 {
+        height: 400px;
+        position: fixed;
+        top: 180px;
+        left: 254px;
+        -user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }   
+</style>
 </html>
